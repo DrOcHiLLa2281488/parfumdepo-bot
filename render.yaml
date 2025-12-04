@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: parfumdepo-bot
+    runtime: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bot:app --bind 0.0.0.0:${PORT:-10000} --workers 1 --threads 8 --timeout 300
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_URL
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+    healthCheckPath: /health
+    healthCheckTimeout: 30
+    autoDeploy: true
