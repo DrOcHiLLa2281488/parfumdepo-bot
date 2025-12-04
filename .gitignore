@@ -1,0 +1,11 @@
+.env
+*.pyc
+__pycache__/
+*.log
+.DS_Store
+venv/
+instance/
+.webassets-cache
+.coverage
+htmlcov/
+.pytest_cache/
