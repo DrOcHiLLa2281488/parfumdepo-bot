@@ -9,3 +9,4 @@ instance/
 .coverage
 htmlcov/
 .pytest_cache/
+admins.txt
